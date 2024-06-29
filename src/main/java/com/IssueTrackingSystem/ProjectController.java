@@ -19,34 +19,40 @@ import java.util.Map;
 @Controller
 public class LoginController {
 
-    String jdbcURL="jdbc:mysql://localhost:3307/IssueTrackingSystem";
+    String jdbcURL = "jdbc:mysql://localhost:3307/IssueTrackingSystem";
+
     @PostMapping("/addproject")
-    public String registerDBAdmin
-            (@RequestParam("button") String button,@RequestParam("ProjectName") String Name,@RequestParam("Description") String Description,@RequestParam("StartDate") String StartDate,@RequestParam("EndDate") String EndDate){
+    public String registerDBAdmin(
+            @RequestParam("button") String button,
+            @RequestParam("ProjectName") String Name,
+            @RequestParam("Description") String Description,
+            @RequestParam("StartDate") String StartDate,
+            @RequestParam("EndDate") String EndDate) {
         System.out.println("Admin registered");
-        Connection con=null;
+        Connection con = null;
         try {
-            con= DriverManager.getConnection(jdbcURL,"root","root");
-            String sql="INSERT INTO project VALUES(?,?,?,?)";
-            PreparedStatement ps=con.prepareStatement(sql);
-            ps.setString(1,Name);
-            ps.setString(2,Description);
-            ps.setString(3,StartDate);
-            ps.setString(4,EndDate);
+            con = DriverManager.getConnection(jdbcURL, "root", "root");
+            String sql = "INSERT INTO project VALUES(?,?,?,?)";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, Name);
+            ps.setString(2, Description);
+            ps.setString(3, StartDate);
+            ps.setString(4, EndDate);
             ps.execute();
             con.close();
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
         }
         return "user";
     }
+
     @PostMapping("/deleteproject")
     public String deleteProjectByName(@RequestParam("Name") String name) {
         System.out.println("Deleting project with name: " + name);
         Connection con = null;
         try {
             con = DriverManager.getConnection(jdbcURL, "root", "root");
-            String sql = "DELETE FROM project WHERE name = ?"; // Adjust column name to match your table
+            String sql = "DELETE FROM project WHERE Name = ?"; // Adjust column name to match your table
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1, name);
             int rowsAffected = ps.executeUpdate();
@@ -62,6 +68,7 @@ public class LoginController {
         }
         return "user";
     }
+
     @PostMapping("/updateproject")
     public String updateProject(
             @RequestParam("Name") String name,
@@ -91,6 +98,7 @@ public class LoginController {
         }
         return "user";
     }
+
     @GetMapping("/")
     public String roles() {
         return "user";
@@ -113,7 +121,7 @@ public class LoginController {
     public String getQA(@RequestParam("button") String buttons) {
         if (buttons.equals("button1")) {
             return "qadashboard";
-      }
+        }
         if (buttons.equals("button2")) {
             return "register";
         } else {
@@ -167,35 +175,36 @@ public class LoginController {
         }
         if (button.equals("button3")) {
             return "updateproject";
-        }
-        else {
+        } else {
             return "redirect:/viewProject";
         }
     }
+
     @GetMapping("/viewProject")
     public String viewProject(Model model) {
-        List<Map<String,Object>> prjlist= getProjectDetails();
+        List<Map<String, Object>> prjlist = getProjectDetails();
         model.addAttribute("prjlist", prjlist);
         System.out.println("inside viewProject with button value: ");
         return "viewproject";
     }
-    @ModelAttribute("projectList")
-    public List<Map<String,Object>> getProjectDetails() {
-        List<Map<String,Object>> projectList = new ArrayList<>();
+
+    @ModelAttribute("prjlist")
+    public List<Map<String, Object>> getProjectDetails() {
+        List<Map<String, Object>> projectList = new ArrayList<>();
         try {
             Connection con = DriverManager.getConnection(jdbcURL, "root", "root");
-            String sql = "select * from project";
+            String sql = "SELECT * FROM project";
             PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
-            while(rs.next()){
-                HashMap<String,Object> hm= new HashMap<>();
-                hm.put("ProjectName",rs.getString("Name"));
-                hm.put("Description",rs.getString("Description"));
-                hm.put("StartDate",rs.getDate("StartDate"));
-                hm.put("EndDate",rs.getDate("EndDate"));
+            while (rs.next()) {
+                Map<String, Object> hm = new HashMap<>();
+                hm.put("ProjectName", rs.getString("Name"));
+                hm.put("Description", rs.getString("Description"));
+                hm.put("StartDate", rs.getDate("StartDate"));
+                hm.put("EndDate", rs.getDate("EndDate"));
                 projectList.add(hm);
             }
-            System.out.println("Mapdata is "+projectList);
+            System.out.println("Mapdata is " + projectList);
             con.close();
         } catch (Exception e) {
             System.out.println(e);

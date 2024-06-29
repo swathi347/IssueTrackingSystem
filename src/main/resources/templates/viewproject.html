@@ -12,23 +12,12 @@
 <header id="header">
     <div class="container">
         <h1 id="head-in" style="display: inline;">ISSUE TRACKING SYSTEM</h1>
-        <nav>
-            <ul>
-                <li><a href="/admin/Admin_dashBoard">Products</a></li>
-                <li><a href="/admin/user">Users</a></li>
-                <!-- <li><a href="order.html">Orders</a></li>
-                <li><a href="login.html">Login/Register</a></li> -->
-                <!-- <li><a href="register.html">Register</a></li> -->
-            </ul>
-        </nav>
-    </div>
 </header>
 <br>
 <br>
 <br>
-<center>
     <h1>PRODUCTS</h1>
-    <table border="1px" style="color: azure;">
+    <table border="1px" style="color: darkblue;">
         <thead>
         <tr><td id="proName" name="proName">Project name</td>
             <td id="proDec" name="proDec">Project Description</td>
@@ -37,16 +26,11 @@
         </thead>
         <tbody>
         <tr th:each="dataItem : ${prjlist}">
-            <td th:text="${dataItem.ProjectName}"></td>
-            <td th:text="${dataItem.Description}"></td>
-            <td th:text="${dataItem.StartDate}"></td>
-            <td th:text="${dataItem.EndDate}"></td>
-
+            <td  th:text="${dataItem.ProjectName}"></td>
+            <td  th:text="${dataItem.Description}"></td>
+            <td  th:text="${#dates.format(dataItem.StartDate, 'yyyy-MM-dd')}"></td>
+            <td  th:text="${#dates.format(dataItem.EndDate, 'yyyy-MM-dd')}"></td>
         </tr>
         </tbody>
-
-        <br>
-        <!-- <button>Add to cart</button> -->
-</center>
 </body>
 </html>

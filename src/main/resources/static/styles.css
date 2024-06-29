@@ -7,7 +7,7 @@
 /* Body styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #ffffff;
+    background-color: #000000;
     margin: 0;
     padding-top: 60px; /* Adjust for sticky header height */
 }
@@ -137,6 +137,8 @@ button {
 button:hover {
     background-color: #106e37;
 }
+
+
 table tr
 p {
     margin-top: 10px;
