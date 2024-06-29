@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header id="header">
+    <div class="container">
+        <h1 id="head-in" style="display: inline;">ISSUE TRACKING SYSTEM</h1>
+    </div>
+</header>
+<br>
+<br>
+<br>
+<div class="content">
+    <div class="container-div">
+        <form action="/updateproject" method="post" >
+            <h2>Update Project</h2>
+            <div class="form-control">
+                <label for="ProjectName">Project Name</label>
+                <input type="text" id="ProjectName" name="Name" placeholder="Enter your Project Name without space" required>
+            </div>
+            <div class="form-control">
+                <label for="projectdescription">Description</label>
+                <input type="text" id="projectdescription" name="Description"  placeholder="Description" required>
+            </div>
+            <div class="form-control">
+                <label for="startdate">Start Date</label>
+                <input type="date" id="startdate" name="StartDate"  placeholder="Date" required>
+            </div>
+            <div class="form-control">
+                <label for="enddate">End Date</label>
+                <input type="date" id="enddate" name="EndDate"  placeholder="Date" required>
+            </div>
+            <button id="login" name="button" value="button" type="submit">Update Project</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

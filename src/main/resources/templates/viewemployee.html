@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+
+
+</head>
+<body>
+<header id="header">
+    <div class="container">
+        <h1 id="head-in" style="display: inline;">INVO~MANAGE</h1>
+        <nav>
+            <ul>
+                <li><a href="/admin/Admin_dashBoard">Products</a></li>
+                <li><a href="/admin/user">Users</a></li>
+                <!-- <li><a href="order.html">Orders</a></li>
+                <li><a href="login.html">Login/Register</a></li> -->
+                <!-- <li><a href="register.html">Register</a></li> -->
+            </ul>
+        </nav>
+    </div>
+</header>
+<br>
+<br>
+<br>
+<center>
+    <h1>PRODUCTS</h1>
+    <table border="1px" style="color: azure;">
+        <thead>
+        <tr><td id="proId" name="proID">Product Id</td><td id="proName" name="proName">Product name</td> <td id="proDec" name="proDec">Product Description</td> <td id="proQuantity" name="proQuantity">Product Quantity</td> <td id="proPri" name="proPri" >Product Price</td> </tr>
+        </thead>
+        <tbody>
+        <tr th:each="dataItem : ${dataList}">
+            <td th:text="${dataItem.id}"></td>
+            <td th:text="${dataItem.name}"></td>
+            <td th:text="${dataItem.description}"></td>
+            <td th:text="${dataItem.quantity}"></td>
+            <td th:text="${dataItem.price}"></td>
+
+        </tr>
+        </tbody>
+
+        <br>
+        <!-- <button>Add to cart</button> -->
+</center>
+</body>
+</html>

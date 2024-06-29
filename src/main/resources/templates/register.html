@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header id="header">
+    <div class="container">
+        <h1 id="head-in" style="display: inline;">ISSUE TRACKING SYSTEM</h1>
+    </div>
+</header>
+
+<div class="content">
+    <div class="container-div">
+        <form action="/getRegister" method="post">
+            <h2>User_Register</h2><br>
+            <div class="form-control">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Enter Full Name" required>
+            </div>
+            <div class="form-control">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter Email Address" required>
+            </div>
+            <div class="form-control">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter Your Name" required>
+            </div>
+            <div class="form-control">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter Your Password" required>
+            </div>
+            <div class="form-control">
+                <label for="role">Role</label>
+                <input type="text" id="role" name="role" placeholder="Enter Your Role" required>
+            </div>
+            <button class="button" name="button" value="button1" id="button1">Register</button><br>
+            <p>Already have an account? <button class="button" name="button" value="button2" id="button2">Login</button></p>
+        </form>
+    </div>
+</div>
+</body>
+</html>

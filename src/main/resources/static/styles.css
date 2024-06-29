@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding-top: 60px; /* Adjust for sticky header height */
+}
+
+/* Header styles */#header {
+    background-color: #011f33;
+    color: #fff8eb;
+    text-align: center;
+    padding: 25px 0;
+    height: px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+#header h1 {
+    text-align: left;
+  /* //  display: inline; */
+    margin-right: 500px;
+    font-size: 24px;
+    font-style: bold;
+    margin: 0;
+}
+h2{
+    align-items: center;
+    text-align: center;
+}
+
+nav ul {
+    display: inline;
+    color: #011f33;
+    list-style-type: none;
+    padding: 0;
+    /* margin-left: 500px; */
+    padding-bottom: 25px;
+    padding: 25px;
+    text-align: right;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    /* margin-right: 20px; */
+}
+
+nav ul li a {
+    text-align: right;
+    color: #eec16d;
+    text-decoration: none;
+    font-size: 20px;
+    padding-right: 20px;
+    /* margin-right: 70px; */
+    transition: color 0.3s ease;
+}
+#head-in{
+    text-align: left;
+    padding: 15px;
+    margin-right: 500px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Container for forms */
+header.container{
+    
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 10px 10px 100px rgba(216, 5, 5, 0.1);
+    width: 350px;
+    margin: 20px auto;
+}
+.container-div {
+    background-color: #808080;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 10px 10px 100px rgba(216, 5, 5, 0.1);
+    width: 350px;
+    margin: 20px auto;
+}
+
+/* Content area below header */
+.content {
+    padding-top: 80px; /* Adjust for sticky header height */
+}
+
+.section {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Form styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-control {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px;
+    background-color: #011f33;
+    color: #f0eaea;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #106e37;
+}
+table tr
+p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+a {
+    color: #03426b;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

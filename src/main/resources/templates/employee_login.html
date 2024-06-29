@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!--<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- <link rel="stylesheet" href="../css/dashboard.css"> -->
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <h1 id="head-in" style="display: inline;">ISSUE TRACKING SYSTEM</h1>
+        </div>
+    </header>
+
+    <div class="content">
+        <div class="container-div">
+            <form action="/getEmployeeDashboard" method="post">
+                <h2>Employee Login</h2>
+                <div class="form-control">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your name" required>
+                </div>
+                <div class="form-control">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password"  placeholder="Enter your Password" required>
+                </div>
+                <button class="button" name="button" value="button1" id="button1">Login</button>
+                <p>Don't have an account? <button class="button" name="button" value="button2" id="button2">Register</button></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

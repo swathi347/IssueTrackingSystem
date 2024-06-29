@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+
+
+</head>
+<body>
+<header id="header">
+    <div class="container">
+        <h1 id="head-in" style="display: inline;">ISSUE TRACKING SYSTEM</h1>
+        <nav>
+            <ul>
+                <li><a href="/admin/Admin_dashBoard">Products</a></li>
+                <li><a href="/admin/user">Users</a></li>
+                <!-- <li><a href="order.html">Orders</a></li>
+                <li><a href="login.html">Login/Register</a></li> -->
+                <!-- <li><a href="register.html">Register</a></li> -->
+            </ul>
+        </nav>
+    </div>
+</header>
+<br>
+<br>
+<br>
+<center>
+    <h1>PRODUCTS</h1>
+    <table border="1px" style="color: azure;">
+        <thead>
+        <tr><td id="proName" name="proName">Project name</td>
+            <td id="proDec" name="proDec">Project Description</td>
+            <td id="startDate" name="proQuantity">Start Date</td>
+            <td id="proPri" name="proPri" >End Date</td> </tr>
+        </thead>
+        <tbody>
+        <tr th:each="dataItem : ${prjlist}">
+            <td th:text="${dataItem.ProjectName}"></td>
+            <td th:text="${dataItem.Description}"></td>
+            <td th:text="${dataItem.StartDate}"></td>
+            <td th:text="${dataItem.EndDate}"></td>
+
+        </tr>
+        </tbody>
+
+        <br>
+        <!-- <button>Add to cart</button> -->
+</center>
+</body>
+</html>
